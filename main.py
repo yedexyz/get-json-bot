@@ -1,16 +1,14 @@
 import json
-
-from aiogram import Bot, Dispatcher, types
 import logging
 import os
 
+from aiogram import Bot, Dispatcher, types
 from aiogram.types import ContentTypes
 from aiogram.utils import executor
 
 API_TOKEN: str = os.environ["API_TOKEN"]  # 1231231231:SALAD12_SAddamsASASJDJAKSDJKSADASs
 
 logging.basicConfig(level=logging.INFO)
-
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
