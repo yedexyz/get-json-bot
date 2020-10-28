@@ -17,7 +17,14 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(content_types=ContentTypes.ANY)
 async def json_please(message: types.Message):
-    await message.answer("<code>" + json.dumps(message.to_python(), indent=4) + "</code>", parse_mode="html")
+    data = message.to_python()
+    print(type(data))
+
+    for i in list(data):
+        new = "</code><b>" + i + "</b><code>"
+        data[new] = data.pop(i)
+
+    await message.answer("<code>" + json.dumps(data, indent=4, ensure_ascii=False) + "</code>", parse_mode="html")
 
 
 if __name__ == '__main__':
