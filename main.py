@@ -17,7 +17,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(content_types=ContentTypes.ANY)
 async def handle(message: types.Message):
-    await message.answer(json.dumps(json.loads(str(message)), indent=4))
+    await message.answer(json.dumps(json.loads(message.as_json()), indent=4))
 
 
 if __name__ == '__main__':
