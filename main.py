@@ -17,7 +17,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(content_types=ContentTypes.ANY)
 async def json_please(message: types.Message):
-    await message.answer(json.dumps(message.to_python(), indent=4))
+    await message.answer("`" + json.dumps(message.to_python(), indent=4) + "`", parse_mode="markdown")
 
 
 if __name__ == '__main__':
