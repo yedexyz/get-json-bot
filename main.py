@@ -4,9 +4,7 @@ import os
 from urllib.parse import urljoin
 
 from aiogram import Bot, Dispatcher, types
-from aiogram.dispatcher.webhook import get_new_configured_app
 from aiogram.types import ContentTypes
-from aiogram.utils import executor
 from aiogram.utils.executor import start_webhook
 
 API_TOKEN: str = os.environ["API_TOKEN"]  # 1231231231:SALAD12_SAddamsASASJDJAKSDJKSADASf
