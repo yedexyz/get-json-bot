@@ -28,12 +28,12 @@ async def json_please(message: types.Message):
                          parse_mode="html")
 
 
-async def on_startup(dp):
+async def on_startup(_):
     await bot.set_webhook(WEBHOOK_URL)
     logging.info(dp)
 
 
-async def on_shutdown(dp):
+async def on_shutdown(_):
     logging.info(dp)
 
 
